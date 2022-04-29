@@ -49,7 +49,9 @@ router.delete("/:id", (req, res) => {
 router.put("/:id", (req, res) => {
   const { id } = req.params;
   const productFound = products.find((product) => product.id === id);
-
+  if (!productFound) {
+    res.status(404).send("Error 404: ID cannot be found.");
+  }
   productFound.name = req.body.name;
   productFound.brand = req.body.brand;
   productFound.price = req.body.price;
