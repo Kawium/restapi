@@ -1,0 +1,34 @@
+# Loads main page
+GET http://localhost:8000/
+###
+
+#Loads all products
+GET http://localhost:8000/products
+###
+
+#Get specific product by id
+GET http://localhost:8000/products/(enter id)
+###
+
+#Posts a product
+POST http://localhost:8000/products
+Content-Type: application/json
+
+{
+"name": "Nike collab", "brand": "Nike", "price": 1200
+}
+###
+
+#
+PUT http://localhost:8000/products/(enter id)
+Content-Type: application/json
+
+{
+"name": "Yeezy", "brand": "Adidas", "price": 200
+}
+
+###
+
+DELETE http://localhost:8000/products/(enter id)
+
+###
